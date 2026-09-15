@@ -4,11 +4,8 @@ import com.portfolioX.PortFolioX.dto.UserResponseDTO;
 import com.portfolioX.PortFolioX.entity.Role;
 import com.portfolioX.PortFolioX.entity.User;
 import com.portfolioX.PortFolioX.repository.UserRepo;
-import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -17,6 +14,8 @@ public class UserService {
     private UserRepo userRepo;
 
     private PasswordEncoder passwordEncoder;
+
+    private Role role;
 
     UserService (UserRepo userRepo,PasswordEncoder passwordEncoder){
         this.userRepo= userRepo ;
@@ -34,7 +33,6 @@ public class UserService {
 //    public User addUser(User user){
 //        return userRepo.save(user);
 //    }
-
     //public User addUser(UserRequestDTO dto)
     public UserResponseDTO addUser(UserRequestDTO dto) {
         User user = new User();
@@ -45,16 +43,17 @@ public class UserService {
         user.setPassword(passwordEncoder.encode(dto.getPassword()));
         User saveduser = userRepo.save(user);
 
-        UserRequestDTO response = new UserResponseDTO();
 
-        return userRepo.save(user);
+        UserResponseDTO response = new UserResponseDTO();
 
-        user.getUserId(dto.getUserId());
-        user.getEmail(dto.getEmail());
-        user.getName(dto.getName());
-        user.getRole(Role.USER);
-        user.getCreationTime(LocalDateTime.now());
-        user.getLastLogin(LocalDateTime.now());
+        response.setUserId(saveduser.getUserId());
+        response.setName(saveduser.getName());
+        response.setRole(saveduser.getRole());
+        response.setCreationTime(saveduser.getCreationTime());
+        response.setLastLogin(saveduser.getLastLogin());
+        response.setEmail(saveduser.getEmail());
+
+        return response;
 
     }
 

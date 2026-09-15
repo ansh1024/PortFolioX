@@ -1,5 +1,7 @@
 package com.portfolioX.PortFolioX.controller;
 
+import com.portfolioX.PortFolioX.dto.UserRequestDTO;
+import com.portfolioX.PortFolioX.dto.UserResponseDTO;
 import com.portfolioX.PortFolioX.entity.User;
 import com.portfolioX.PortFolioX.service.UserService;
 import org.springframework.http.HttpStatus;
@@ -36,8 +38,8 @@ public class UserController {
     }
 
     @PostMapping("/")
-    public ResponseEntity<?>addUser(@RequestBody User user){
-        User user1 = userService.addUser(user);
+    public ResponseEntity<?>addUser(@RequestBody UserRequestDTO user){
+        UserResponseDTO user1 = userService.addUser(user);
         return new ResponseEntity<>(user1,HttpStatus.CREATED);
     }
 

@@ -1,20 +1,22 @@
 package com.portfolioX.PortFolioX.dto;
 
+import com.portfolioX.PortFolioX.entity.Role;
+
 import java.time.LocalDateTime;
 
 public class UserResponseDTO {
     private long userId;
     private String email;
     private String name;
-    private String role;
+    private Role role;
     private LocalDateTime creationTime;
     private LocalDateTime lastLogin;
 
-    public String getUserId() {
+    public long getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(long userId) {
         this.userId = userId;
     }
 
@@ -34,11 +36,11 @@ public class UserResponseDTO {
         this.name = name;
     }
 
-    public String getRole() {
+    public Role getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(Role role) {
         this.role = role;
     }
 
