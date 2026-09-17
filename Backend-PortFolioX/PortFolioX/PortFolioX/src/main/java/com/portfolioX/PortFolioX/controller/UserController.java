@@ -2,7 +2,6 @@ package com.portfolioX.PortFolioX.controller;
 
 import com.portfolioX.PortFolioX.dto.UserRequestDTO;
 import com.portfolioX.PortFolioX.dto.UserResponseDTO;
-import com.portfolioX.PortFolioX.entity.User;
 import com.portfolioX.PortFolioX.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,18 +21,18 @@ public class UserController {
     }
 
     @GetMapping("/")
-        public ResponseEntity<List<User>> getAllUsers(){
+        public ResponseEntity<List<UserResponseDTO>> getAllUsers(){
             return new ResponseEntity<>(userService.getAllUsers(),HttpStatus.OK);
         }
 
 
     @GetMapping("/{userId}")
-    public ResponseEntity<User> getUser(@PathVariable long userId) {
-        User user = userService.getUserById(userId);
+    public ResponseEntity<UserResponseDTO> getUser(@PathVariable long userId) {
+        UserResponseDTO user = userService.getUserById(userId);
         if (user != null) {
-            return new ResponseEntity<User>(user, HttpStatus.OK);
+            return new ResponseEntity<UserResponseDTO>(user, HttpStatus.OK);
         } else {
-            return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<UserResponseDTO>(HttpStatus.NOT_FOUND);
         }
     }
 

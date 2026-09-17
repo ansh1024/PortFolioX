@@ -4,8 +4,12 @@ import com.portfolioX.PortFolioX.dto.UserResponseDTO;
 import com.portfolioX.PortFolioX.entity.Role;
 import com.portfolioX.PortFolioX.entity.User;
 import com.portfolioX.PortFolioX.repository.UserRepo;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -22,12 +26,45 @@ public class UserService {
         this.passwordEncoder=passwordEncoder;
     }
 
-    public List<User> getAllUsers(){
-        return userRepo.findAll();
+    public List<UserResponseDTO> getAllUsers() {
+
+        List<User> users = userRepo.findAll();
+
+        List<UserResponseDTO> responses = new ArrayList<>();
+
+        for (User user : users) {
+
+            UserResponseDTO response = new UserResponseDTO();
+
+            response.setUserId(user.getUserId());
+            response.setEmail(user.getEmail());
+            response.setName(user.getName());
+            response.setRole(user.getRole());
+            response.setCreationTime(user.getCreationTime());
+            response.setLastLogin(user.getLastLogin());
+
+            responses.add(response);
+        }
+
+        return responses;
     }
 
-    public User getUserById(long userId){
-        return userRepo.findById(userId).orElse(null);
+    public UserResponseDTO getUserById(long userId){
+        User user = userRepo.findById(userId).orElse(null);
+        if (user == null) {
+            return null;
+        }
+
+        UserResponseDTO response = new UserResponseDTO();
+
+        response.setUserId(user.getUserId());
+        response.setEmail(user.getEmail());
+        response.setName(user.getName());
+        response.setRole(user.getRole());
+        response.setCreationTime(user.getCreationTime());
+        response.setLastLogin(user.getLastLogin());
+
+        return response;
     }
 
 //    public User addUser(User user){
