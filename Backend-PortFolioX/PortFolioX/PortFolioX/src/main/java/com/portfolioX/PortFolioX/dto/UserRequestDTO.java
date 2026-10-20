@@ -1,8 +1,19 @@
 package com.portfolioX.PortFolioX.dto;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
 public class UserRequestDTO {
+    @Email
+    @NotBlank
     private String email;
+
+    @NotBlank
     private String name;
+
+    @NotBlank
+    @Size(min=8,max=16)
     private String password;
 
     public String getEmail() {

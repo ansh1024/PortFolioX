@@ -1,35 +1,46 @@
 package com.portfolioX.PortFolioX.entity;
 
+import com.portfolioX.PortFolioX.validation.ValidIpoDates;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.PositiveOrZero;
 
 import java.time.LocalDate;
 
 
 @Entity
 @Table(name="ipo_masters")
+@ValidIpoDates
 public class IpoMaster {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="ipo_id")
     private long ipoId;
 
+    @NotBlank
     @Column(name="company_name",nullable = false)
     private String companyName;
 
+    @NotNull
     @Column(name="opening_date")
     private LocalDate openingDate;
 
+    @NotNull
     @Column(name="closing_date")
     private LocalDate closingDate;
 
     @Column(name="allotment_date")
     private LocalDate allotmentDate;
 
+    @Positive
     @Column(name="price")
     private float price;
 
+    @PositiveOrZero
     @Column(name="gmp")
-    private int gmp;
+    private float gmp;
 
     @Column(name="sector")
     private String sector;
@@ -57,7 +68,7 @@ public class IpoMaster {
         return gmp;
     }
 
-    public void setGmp(int gmp) {
+    public void setGmp(float gmp) {
         this.gmp = gmp;
     }
 
@@ -164,4 +175,6 @@ public class IpoMaster {
     public void setIpoStatus(IpoStatus ipoStatus) {
         this.ipoStatus = ipoStatus;
     }
+
+
 }

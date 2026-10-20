@@ -49,7 +49,7 @@ public class IpoApplication {
         this.applicationStatus = applicationStatus;
     }
 
-    public long getLotsAllotted() {
+    public int getLotsAllotted() {
         return lotsAllotted;
     }
 
@@ -57,7 +57,7 @@ public class IpoApplication {
         this.lotsAllotted = lotsAllotted;
     }
 
-    public long getLotsApplied() {
+    public int getLotsApplied() {
         return lotsApplied;
     }
 

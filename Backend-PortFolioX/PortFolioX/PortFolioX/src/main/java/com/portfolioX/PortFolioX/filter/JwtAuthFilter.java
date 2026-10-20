@@ -38,7 +38,8 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         long userId;
         try{
             userId= jwtService.validateToken(token);
-        } catch(Exception e){
+        } catch (Exception e) {
+            e.printStackTrace(); // Temporary debugging only
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             return;
         }
