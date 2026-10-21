@@ -43,8 +43,12 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             return;
         }
-        User user =userRepo.findById(userId)
-                .orElseThrow(()->new ServletException("User not found"));
+        User user = userRepo.findById(userId).orElse(null);
+
+        if (user == null) {
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            return;
+        }
         var authentication= new UsernamePasswordAuthenticationToken(
                 user.getUserId(),
                 null,
