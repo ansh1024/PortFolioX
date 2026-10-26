@@ -1,0 +1,48 @@
+/* Hallmark · pre-emit critique: P5 H5 E4 S5 R4 V5
+ * genre: modern-minimal · macrostructure: Split Studio · theme: reference-led
+ * nav: N1b · footer: Ft5 · studied: yes · source: user-provided Payless reference
+ * The requested reference overrides the older navy/teal palette for this landing page only.
+ */
+:root {
+  --color-paper: oklch(98.5% 0.005 106);
+  --color-ink: oklch(17% 0.006 115);
+  --color-muted: oklch(48% 0.012 115);
+  --color-surface: oklch(24% 0.006 115);
+  --color-surface-deep: oklch(13% 0.006 115);
+  --color-inverse: oklch(98.5% 0.005 106);
+  --color-inverse-muted: oklch(75% 0.009 115);
+  --color-line: oklch(85% 0.01 106);
+  --color-dark-line: oklch(36% 0.008 115);
+  --color-grid: oklch(35% 0.006 115 / 0.5);
+  --color-lime: oklch(93% 0.235 119);
+  --color-lime-pressed: oklch(85% 0.215 119);
+  --color-blue: oklch(53% 0.235 277);
+  --color-pink: oklch(88% 0.065 345);
+  --color-mint: oklch(87% 0.065 165);
+  --color-focus: oklch(48% 0.22 277);
+  --color-shadow: oklch(9% 0.008 115 / 0.18);
+  --color-overlay: oklch(13% 0.006 115 / 0.65);
+  --color-transparent: transparent;
+  --font-display: 'Manrope Variable', sans-serif;
+  --font-body: 'DM Sans Variable', sans-serif;
+  --space-3xs: 4px;
+  --space-2xs: 8px;
+  --space-xs: 12px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --space-2xl: 64px;
+  --space-3xl: 80px;
+  --space-4xl: 112px;
+  --space-5xl: 144px;
+  --page-max: 1160px;
+  --page-gutter: 20px;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}

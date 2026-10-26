@@ -1,0 +1,13 @@
+// Temporary, illustrative UI content only. These are not user records or live market data.
+export const previewModules = [
+  { id: 'ipos', label: 'IPO tracker', symbol: 'spark', color: 'pink', tag: 'A little perspective', title: 'The opportunity.\nAnd the reasoning.', description: 'Keep IPO details, applications and score breakdowns together. Take a closer look before making your next move.', sheetTitle: 'An opportunity, unpacked.', rows: ['GMP & subscription', 'Fundamentals & sector', 'Your application'], note: 'The context behind the number.', sheetLabel: 'IPO overview' },
+  { id: 'sips', label: 'SIP holdings', symbol: 'rise', color: 'mint', tag: 'Play the long game', title: 'Small steps.\nA clearer big picture.', description: 'Bring your mutual funds and SIP holdings into one view. Keep track of contributions, units and the details that matter to you.', sheetTitle: 'Your long-term perspective.', rows: ['Linked mutual fund', 'Units & contributions', 'Investment frequency'], note: 'A place for your progress.', sheetLabel: 'Holdings overview' },
+  { id: 'journal', label: 'Decision journal', symbol: 'journal', color: 'blue', tag: 'Make a note of it', title: 'Remember the why.\nNot just the what.', description: 'Give your investment decisions a little context. Keep your own reasoning alongside the IPOs you are considering.', sheetTitle: 'A thought worth keeping.', rows: ['The IPO you considered', 'Your investment reasoning', 'A decision to revisit'], note: 'Your perspective belongs here.', sheetLabel: 'Journal overview' },
+];
+
+export const questions = [
+  { question: 'What can I keep track of with PortfolioX?', answer: 'PortfolioX brings together IPOs, IPO applications, mutual funds, SIP holdings, risk assessments and your decision journal. The landing page introduces those modules; their frontend screens will be built separately.' },
+  { question: 'Are the numbers in this preview live?', answer: 'No. The hero cards are clearly labelled illustrative examples. This page is not connected to an account or a live market feed, and none of the sample values represents your investments.' },
+  { question: 'Does PortfolioX invest on my behalf?', answer: 'No. It is a tracking and decision-support project. You stay in charge of your decisions; this page does not place orders, move money or make investment promises.' },
+  { question: 'Can I sign in or create an account yet?', answer: 'This first frontend step is the landing-page design. Login, registration and real backend integration will be added in the authentication step. The existing Spring Boot backend remains unchanged.' },
+];
