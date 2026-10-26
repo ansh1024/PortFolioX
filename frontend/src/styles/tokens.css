@@ -26,6 +26,14 @@
   --color-workspace-background: oklch(96.5% 0.006 260);
   --color-navigation-background: oklch(93.5% 0.016 260);
   --color-workspace-panel: oklch(100% 0 0);
+  --color-on-accent: oklch(17% 0.006 115);
+  --color-theme-track: oklch(70% 0.14 260);
+  --color-theme-sky-near: oklch(85% 0.07 255);
+  --color-theme-sky-middle: oklch(81% 0.09 255);
+  --color-theme-sky-far: oklch(77% 0.11 255);
+  --color-theme-knob: oklch(100% 0 0);
+  --color-theme-crater: oklch(80% 0.02 260);
+  --color-theme-sun: var(--color-lime);
   --font-display: 'Manrope Variable', sans-serif;
   --font-body: 'DM Sans Variable', sans-serif;
   --space-3xs: 4px;
@@ -48,4 +56,20 @@
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* Dashboard-scoped overrides never change the landing-page palette. */
+.dash-shell[data-theme="dark"] {
+  --color-paper: oklch(23% 0.012 260);
+  --color-ink: oklch(95% 0.006 260);
+  --color-muted: oklch(74% 0.015 260);
+  --color-line: oklch(37% 0.016 260);
+  --color-workspace-background: oklch(18.5% 0.012 260);
+  --color-navigation-background: oklch(22% 0.018 260);
+  --color-workspace-panel: oklch(25% 0.016 260);
+  --color-blue: oklch(76% 0.125 277);
+  --color-focus: oklch(80% 0.12 260);
+  --color-mint: oklch(33% 0.04 165);
+  --color-pink: oklch(33% 0.04 320);
+  --color-theme-track: oklch(36% 0.07 275);
 }
