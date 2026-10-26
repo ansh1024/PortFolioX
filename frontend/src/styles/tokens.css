@@ -23,6 +23,9 @@
   --color-shadow: oklch(9% 0.008 115 / 0.18);
   --color-overlay: oklch(13% 0.006 115 / 0.65);
   --color-transparent: transparent;
+  --color-workspace-background: oklch(96.5% 0.006 260);
+  --color-navigation-background: oklch(93.5% 0.016 260);
+  --color-workspace-panel: oklch(100% 0 0);
   --font-display: 'Manrope Variable', sans-serif;
   --font-body: 'DM Sans Variable', sans-serif;
   --space-3xs: 4px;

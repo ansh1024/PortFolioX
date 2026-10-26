@@ -1,0 +1,92 @@
+/* Hallmark · shared application shell · existing reference-led tokens
+ * pre-emit critique: P5 H5 E4 S5 R5 V4 · no landing-page selectors overridden */
+.dash-shell { min-height: 100dvh; background: var(--color-paper); }
+.dash-desktop-sidebar { display: none; }
+.dash-body { min-width: 0; min-height: 100dvh; display: flex; flex-direction: column; }
+.dash-sidebar { min-height: 100%; display: flex; flex-direction: column; padding: var(--space-lg) var(--space-md) var(--space-md); color: var(--color-inverse); background: var(--color-surface-deep); }
+.dash-sidebar__brand-row { display: flex; justify-content: space-between; align-items: center; gap: var(--space-xs); }
+.dash-brand { font-size: 23px; }
+.dash-brand .brand__mark i { background: var(--color-lime); }
+.dash-nav-caption { color: var(--color-inverse-muted); font-size: 9px; font-weight: 600; letter-spacing: 0.13em; margin: var(--space-xl) var(--space-xs) var(--space-sm); }
+.dash-nav { display: grid; gap: var(--space-2xs); }
+.dash-nav-link { display: flex; align-items: center; gap: var(--space-xs); min-height: 48px; padding: var(--space-xs); border-radius: var(--radius-sm); color: var(--color-inverse-muted); font-size: 13px; font-weight: 500; white-space: nowrap; }
+.dash-nav-link:hover { color: var(--color-inverse); background: var(--color-surface); }
+.dash-nav-link--active, .dash-nav-link--active:hover { color: var(--color-ink); background: var(--color-lime); font-weight: 650; }
+.dash-active-dot { width: 5px; height: 5px; margin-left: auto; border-radius: 50%; background: var(--color-ink); visibility: hidden; }
+.dash-nav-link--active .dash-active-dot { visibility: visible; }
+.dash-sidebar :focus-visible { outline-color: var(--color-lime); outline-offset: 3px; }
+.dash-sidebar__footer { margin-top: auto; padding-top: var(--space-xl); }
+.dash-sidebar__note { display: flex; align-items: center; gap: var(--space-xs); padding: var(--space-md) var(--space-xs); border-top: 1px solid var(--color-dark-line); border-bottom: 1px solid var(--color-dark-line); }
+.dash-sidebar__note > svg { color: var(--color-lime); }
+.dash-sidebar__note p { font-size: 12px; line-height: 1.6; }
+.dash-sidebar__note p > span { color: var(--color-inverse-muted); }
+.dash-website-link { display: flex; gap: var(--space-xs); align-items: center; min-height: 48px; margin-top: var(--space-sm); padding-inline: var(--space-xs); font-size: 12px; color: var(--color-inverse-muted); white-space: nowrap; }
+.dash-website-link:hover { color: var(--color-inverse); }
+.dash-topbar { position: sticky; top: 0; z-index: 5; display: flex; align-items: center; justify-content: space-between; gap: var(--space-xs); min-height: 88px; padding: var(--space-sm) var(--space-sm); border-bottom: 1px solid var(--color-line); background: var(--color-paper); }
+.dash-topbar__title { min-width: 0; display: flex; align-items: center; gap: var(--space-xs); }
+.dash-topbar__eyebrow { font-size: 8px; font-weight: 600; letter-spacing: 0.12em; color: var(--color-muted); margin-bottom: var(--space-3xs); }
+.dash-topbar h1 { font-size: clamp(1rem, 4vw, 1.35rem); font-weight: 650; letter-spacing: -0.04em; }
+.dash-icon-button { display: inline-grid; place-items: center; flex-shrink: 0; width: 44px; height: 44px; border: 1px solid var(--color-line); background: var(--color-transparent); color: inherit; border-radius: var(--radius-sm); }
+.dash-icon-button:hover { background: var(--color-lime); color: var(--color-ink); }
+.dash-drawer-close { border-color: var(--color-dark-line); }
+.dash-profile { display: flex; align-items: center; gap: var(--space-xs); }
+.dash-profile__avatar { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--color-mint); color: var(--color-ink); }
+.dash-profile__label { display: none; font-size: 12px; font-weight: 600; }
+.dash-profile__label > span { display: block; color: var(--color-muted); font-size: 10px; font-weight: 400; margin-top: 3px; }
+.dash-content { flex: 1; width: 100%; max-width: 1240px; margin-inline: auto; padding: var(--space-lg) var(--space-sm); }
+.dash-content:focus { outline: none; }
+.dash-section-label { display: inline-flex; padding: 6px 12px; border: 1px solid var(--color-line); border-radius: var(--radius-pill); font-size: 11px; }
+.dash-placeholder__intro h2 { margin-top: var(--space-md); max-width: 20ch; font-size: clamp(2rem, 4vw, 3.1rem); font-weight: 650; letter-spacing: -0.055em; line-height: 1.1; }
+.dash-placeholder__intro > p { max-width: 62ch; margin-top: var(--space-sm); font-size: 13px; line-height: 1.85; color: var(--color-muted); }
+.dash-empty-state { margin-top: var(--space-lg); min-height: 320px; border: 1px solid var(--color-line); border-radius: var(--radius-lg); padding: var(--space-lg) var(--space-sm); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.dash-empty-state__icon { display: grid; place-items: center; width: 76px; height: 76px; margin-bottom: var(--space-md); color: var(--color-blue); background: var(--color-pink); border-radius: var(--radius-md); transform: rotate(-6deg); }
+.dash-empty-state__icon > svg { transform: rotate(6deg); }
+.dash-coming-label { color: var(--color-muted); font-size: 8px; font-weight: 600; letter-spacing: 0.14em; }
+.dash-empty-state h3 { margin-top: var(--space-xs); font-size: clamp(1.2rem, 3vw, 1.6rem); font-weight: 600; letter-spacing: -0.04em; }
+.dash-empty-state p { margin-top: var(--space-xs); font-size: 12px; line-height: 1.8; color: var(--color-muted); }
+.dash-empty-state__rule { width: 40px; height: 1px; margin-block: var(--space-md) var(--space-sm); background: var(--color-line); }
+.dash-empty-state__caption { font-size: 10px; color: var(--color-muted); }
+.dash-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-xs); padding: var(--space-md) var(--space-sm); color: var(--color-muted); font-size: 10px; }
+.dash-footer > span:first-child { color: var(--color-ink); font-family: var(--font-display); font-weight: 650; }
+.dash-drawer { position: fixed; inset: 0 auto 0 0; width: min(304px, calc(100% - 24px)); height: 100dvh; max-height: 100dvh; max-width: none; margin: 0; padding: 0; border: 0; color: var(--color-inverse); background: var(--color-surface-deep); }
+.dash-drawer::backdrop { background: var(--color-overlay); }
+.dash-drawer .dash-sidebar { min-height: 100%; }
+.dash-not-found { max-width: 720px; padding: var(--space-xl) var(--space-md); margin-inline: auto; }
+.dash-not-found h2 { font-size: clamp(2rem, 5vw, 3rem); letter-spacing: -0.05em; margin-top: var(--space-sm); }
+.dash-not-found > p:not(.small-caption) { margin-block: var(--space-md); font-size: 14px; line-height: 1.8; color: var(--color-muted); }
+.dash-not-found .text-button { margin-left: var(--space-xs); }
+@media (min-width: 40rem) {
+  .dash-topbar { padding-inline: var(--space-lg); }
+  .dash-profile__label { display: block; }
+  .dash-content { padding: var(--space-xl) var(--space-lg); }
+  .dash-empty-state { min-height: 360px; padding: var(--space-xl); }
+  .dash-footer { padding-inline: var(--space-lg); }
+}
+@media (min-width: 60rem) {
+  .dash-shell { display: grid; grid-template-columns: 256px minmax(0, 1fr); }
+  .dash-desktop-sidebar { display: block; position: sticky; top: 0; height: 100dvh; overflow-y: auto; }
+  .dash-desktop-sidebar .dash-sidebar { min-height: 100%; }
+  .dash-menu-button { display: none; }
+  .dash-topbar { min-height: 96px; padding-inline: var(--space-xl); }
+  .dash-content { padding-inline: var(--space-xl); }
+  .dash-footer { padding-inline: var(--space-xl); }
+}
+
+/* Light navigation surfaces; retain the existing lime active state. */
+.dash-sidebar, .dash-drawer { background: var(--color-paper); color: var(--color-ink); }
+.dash-desktop-sidebar { border-right: 1px solid var(--color-line); }
+.dash-brand .brand__mark i { background: var(--color-blue); }
+.dash-nav-caption, .dash-sidebar__note p > span, .dash-website-link { color: var(--color-muted); }
+.dash-nav-link { color: var(--color-ink); }
+.dash-nav-link:hover { background: var(--color-mint); color: var(--color-ink); }
+.dash-nav-link--active, .dash-nav-link--active:hover { background: var(--color-lime); color: var(--color-ink); }
+.dash-sidebar :focus-visible { outline-color: var(--color-focus); }
+.dash-sidebar__note { border-color: var(--color-line); }
+.dash-sidebar__note > svg { color: var(--color-blue); }
+.dash-website-link:hover { color: var(--color-ink); }
+.dash-drawer-close { border-color: var(--color-line); }
+
+/* Distinct light surfaces for navigation, workspace and content panels. */
+.dash-shell { background: var(--color-workspace-background); }
+.dash-sidebar, .dash-drawer { background: var(--color-navigation-background); }
+.dash-empty-state { background: var(--color-workspace-panel); }
