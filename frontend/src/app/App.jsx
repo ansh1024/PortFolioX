@@ -7,6 +7,7 @@ import AuthLayout from '../layouts/AuthLayout.jsx';
 import LoginPage from '../pages/LoginPage.jsx';
 import RegistrationPlaceholder from '../pages/RegistrationPlaceholder.jsx';
 import OverviewPage from '../pages/OverviewPage.jsx';
+import IpoTrackerPage from '../pages/IpoTrackerPage.jsx';
 
 export default function App() {
   return <BrowserRouter>
@@ -18,7 +19,7 @@ export default function App() {
       </Route>
       <Route path="/dashboard" element={<DashboardLayout />}>
         {dashboardSections.map(section => section.path
-          ? <Route key={section.path} path={section.path} element={<SectionPlaceholder section={section} />} />
+          ? <Route key={section.path} path={section.path} element={section.path === 'ipo-tracker' ? <IpoTrackerPage /> : <SectionPlaceholder section={section} />} />
           : <Route key="overview" index element={<OverviewPage />} />)}
         <Route path="*" element={<RouteNotFound />} />
       </Route>

@@ -1,0 +1,139 @@
+/* Hallmark · macrostructure: catalogue workspace · tone: calm, precise · existing PortFolioX violet/lime tokens */
+.ipo-page { display: grid; gap: 18px; min-width: 0; color: var(--color-ink); }
+.ipo-page h2, .ipo-page h3, .ipo-dialog h2, .ipo-dialog h3 { font-family: var(--font-display); overflow-wrap: anywhere; min-width: 0; }
+.ipo-intro { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; }
+.ipo-eyebrow { color: var(--color-muted); font-size: 9px; letter-spacing: .1em; margin-bottom: 10px; }
+.ipo-intro h2 { font-size: clamp(27px, 4vw, 38px); font-weight: 550; letter-spacing: -.055em; line-height: 1.15; }
+.ipo-intro h2 > span { color: var(--color-blue); }
+.ipo-intro > div > p:last-child { color: var(--color-muted); font-size: 12px; margin-top: 10px; line-height: 1.7; }
+.ipo-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.ipo-button { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; gap: 8px; padding: 9px 14px; border: 1px solid var(--color-line); border-radius: var(--radius-pill); font-size: 11px; font-weight: 500; line-height: 1.5; white-space: nowrap; color: var(--color-ink); background: var(--color-workspace-panel); }
+.ipo-button:hover:not(:disabled) { border-color: var(--color-blue); color: var(--color-blue); }
+.ipo-button--primary { background: var(--color-lime); color: var(--color-on-accent); border-color: var(--color-lime); }
+.ipo-button--primary:hover:not(:disabled) { background: var(--color-lime-pressed); color: var(--color-on-accent); border-color: var(--color-lime-pressed); }
+.ipo-button--danger { color: var(--color-error); }
+.ipo-icon-button { display: inline-grid; place-items: center; width: 36px; height: 36px; flex-shrink: 0; padding: 0; border: 1px solid var(--color-line); border-radius: 50%; background: none; color: var(--color-ink); }
+.ipo-notice, .ipo-error, .ipo-success { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; padding: 14px 16px; background: var(--color-navigation-background); border-radius: 12px; font-size: 11px; line-height: 1.7; }
+.ipo-notice p, .ipo-error p { flex: 1; min-width: 150px; }
+.ipo-notice > svg { flex-shrink: 0; color: var(--color-blue); }
+.ipo-notice a { color: var(--color-blue); white-space: nowrap; min-height: 32px; display: inline-flex; align-items: center; }
+.ipo-error { color: var(--color-error); background: var(--color-error-surface); }
+.ipo-success { background: var(--color-mint); }
+.ipo-success > button, .ipo-error > button { margin-left: auto; }
+.ipo-summary { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.ipo-summary article { min-width: 0; padding: 18px; background: var(--color-workspace-panel); border-radius: 20px; }
+.ipo-summary article:first-child { background: color-mix(in srgb, var(--color-blue) 9%, var(--color-workspace-panel)); }
+.ipo-summary h3 { font-size: 11px; font-weight: 500; }
+.ipo-summary strong { display: block; margin-block: 16px 7px; font: 500 30px var(--font-display); letter-spacing: -.04em; }
+.ipo-summary p { font-size: 9px; color: var(--color-muted); line-height: 1.7; }
+.ipo-view-switch { display: flex; flex-wrap: wrap; gap: 6px; }
+.ipo-view-switch button { min-height: 42px; display: inline-flex; align-items: center; gap: 12px; padding: 9px 16px; color: var(--color-muted); background: none; border: 1px solid var(--color-transparent); border-radius: var(--radius-pill); font-size: 12px; white-space: nowrap; }
+.ipo-view-switch button[aria-pressed="true"] { color: var(--color-ink); background: var(--color-workspace-panel); border-color: var(--color-line); }
+.ipo-view-switch span { font-size: 10px; color: var(--color-blue); }
+.ipo-panel { min-width: 0; padding: 20px; background: var(--color-workspace-panel); border-radius: 24px; }
+.ipo-section-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; }
+.ipo-section-heading h3 { font-size: 16px; font-weight: 550; letter-spacing: -.03em; }
+.ipo-muted { font-size: 11px; color: var(--color-muted); line-height: 1.8; }
+.ipo-record-count { font-size: 10px; color: var(--color-muted); }
+.ipo-filters { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 12px; padding-block: 0 20px; border-bottom: 1px solid var(--color-line); }
+.ipo-filters > .ipo-field { min-width: 120px; flex: 1; }
+.ipo-filters .ipo-search { flex: 2; min-width: 170px; }
+.ipo-field { display: grid; gap: 6px; min-width: 0; align-content: start; }
+.ipo-field label { font-size: 11px; font-weight: 500; }
+.ipo-field input, .ipo-field select { width: 100%; min-width: 0; height: 42px; padding: 9px 11px; border: 1px solid var(--color-line); border-radius: 10px; background: var(--color-paper); color: var(--color-ink); font-size: 12px; }
+.ipo-field input::placeholder { color: var(--color-muted); }
+.ipo-field [aria-invalid="true"] { border-color: var(--color-error); }
+.ipo-field__error { color: var(--color-error); font-size: 10px; line-height: 1.6; }
+.ipo-table-wrap { position: relative; width: 100%; overflow-x: auto; margin-top: 8px; }
+.ipo-table-wrap table { width: 100%; min-width: 700px; border-collapse: collapse; text-align: left; font-size: 11px; }
+.ipo-table-wrap th { color: var(--color-muted); font-weight: 500; font-size: 10px; white-space: nowrap; }
+.ipo-table-wrap th, .ipo-table-wrap td { padding: 15px 12px; border-bottom: 1px solid var(--color-line); }
+.ipo-table-wrap th:first-child, .ipo-table-wrap td:first-child { padding-left: 0; }
+.ipo-table-wrap td > strong { display: block; font-weight: 550; max-width: 24ch; overflow-wrap: anywhere; }
+.ipo-table-wrap td > small { display: block; color: var(--color-muted); margin-top: 5px; font-size: 9px; }
+.ipo-table-wrap td:not(:first-child) { white-space: nowrap; }
+.ipo-table-wrap td > .ipo-button { min-height: 32px; padding: 6px 10px; font-size: 10px; }
+.ipo-status { display: inline-flex; color: var(--color-muted); padding: 5px 9px; border-radius: var(--radius-pill); background: var(--color-paper); font-size: 10px; text-transform: capitalize; }
+.ipo-status[data-status="OPEN"] { background: var(--color-mint); color: var(--color-ink); }
+.ipo-status[data-status="UPCOMING"] { color: var(--color-blue); background: color-mix(in srgb, var(--color-blue) 9%, var(--color-workspace-panel)); }
+.ipo-empty { display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; min-height: 240px; gap: 12px; padding: 30px 8px; }
+.ipo-empty > span { display: grid; place-items: center; width: 62px; height: 62px; border-radius: 18px; color: var(--color-blue); background: var(--color-paper); margin-bottom: 6px; }
+.ipo-empty h3 { font-size: 20px; font-weight: 500; letter-spacing: -.04em; }
+.ipo-empty p { color: var(--color-muted); font-size: 12px; line-height: 1.8; max-width: 48ch; }
+.ipo-panel__foot { font-size: 10px; line-height: 1.8; color: var(--color-muted); border-top: 1px solid var(--color-line); padding-top: 14px; margin-top: 16px; }
+.ipo-bottom-note { font-size: 10px; }
+.ipo-page :focus-visible, .ipo-dialog :focus-visible { outline: 2px solid var(--color-focus); outline-offset: 4px; }
+.ipo-dialog { width: min(720px, calc(100% - 24px)); max-height: calc(100dvh - 32px); border: 1px solid var(--color-line); border-radius: 24px; color: var(--color-ink); background: var(--color-workspace-panel); padding: 0; }
+.ipo-dialog::backdrop { background: var(--color-overlay); }
+.ipo-dialog__inner { padding: 24px; }
+.ipo-dialog__inner > header { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 20px; }
+.ipo-dialog h2 { font-size: 23px; font-weight: 550; letter-spacing: -.04em; margin: 0; }
+.ipo-form, .ipo-details { display: grid; gap: 18px; }
+.ipo-form__grid, .ipo-detail-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+.ipo-detail-grid { margin: 0; }
+.ipo-detail-grid > div { min-width: 0; padding: 12px; background: var(--color-paper); border-radius: 10px; }
+.ipo-detail-grid dt { color: var(--color-muted); font-size: 10px; margin-bottom: 5px; }
+.ipo-detail-grid dd { margin: 0; font-size: 13px; font-weight: 500; text-transform: capitalize; overflow-wrap: anywhere; }
+.ipo-score { border-top: 1px solid var(--color-line); padding-top: 20px; display: grid; gap: 12px; }
+.ipo-score .ipo-section-heading { margin: 0; }
+.ipo-score__total { font: 500 32px var(--font-display); color: var(--color-blue); margin-block: 12px; }
+.ipo-score__total > span { font-size: 12px; text-transform: capitalize; }
+.ipo-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (min-width: 40rem) { .ipo-summary { grid-template-columns: repeat(4, minmax(0, 1fr)); } .ipo-form__grid, .ipo-detail-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 25rem) { .ipo-summary article { padding: 14px; } .ipo-panel { padding: 16px; } .ipo-dialog__inner { padding: 18px; } .ipo-filters > .ipo-field { min-width: 100%; } }
+
+/* A quieter catalogue with a dedicated context rail. */
+.ipo-workspace { display: grid; grid-template-columns: minmax(0, 1fr); align-items: start; gap: 18px; }
+.ipo-rail { display: grid; min-width: 0; gap: 16px; }
+.ipo-calendar, .ipo-application-snapshot { border-radius: 22px; padding: 20px; background: var(--color-workspace-panel); min-width: 0; }
+.ipo-calendar > header, .ipo-application-snapshot > header { display: flex; align-items: center; gap: 10px; }
+.ipo-calendar h3, .ipo-application-snapshot h3 { font: 550 13px var(--font-display); letter-spacing: -.025em; }
+.ipo-calendar header p { font-size: 10px; color: var(--color-muted); margin-top: 4px; }
+.ipo-rail-icon { display: grid; place-items: center; width: 34px; height: 34px; flex-shrink: 0; background: color-mix(in srgb, var(--color-blue) 9%, var(--color-workspace-panel)); color: var(--color-blue); border-radius: 10px; }
+.ipo-calendar ol { list-style: none; margin: 20px 0 16px; padding: 0; }
+.ipo-calendar li { display: flex; align-items: center; gap: 12px; padding-block: 12px; }
+.ipo-calendar li + li { border-top: 1px solid var(--color-line); }
+.ipo-calendar time { width: 44px; flex-shrink: 0; border-radius: 12px; padding: 8px 4px; background: var(--color-paper); display: grid; justify-items: center; gap: 2px; }
+.ipo-calendar time strong { font: 550 19px var(--font-display); letter-spacing: -.04em; }
+.ipo-calendar time span { font-size: 9px; color: var(--color-muted); }
+.ipo-calendar li > div { min-width: 0; }
+.ipo-calendar__event { font-size: 9px; color: var(--color-blue); }
+.ipo-calendar li button { display: block; padding: 3px 0; min-height: 32px; text-align: left; background: none; border: 0; color: var(--color-ink); font-size: 11px; line-height: 1.6; overflow-wrap: anywhere; }
+.ipo-calendar li button:hover { color: var(--color-blue); text-decoration: underline; text-underline-offset: 3px; }
+.ipo-calendar footer { border-top: 1px solid var(--color-line); padding-top: 12px; color: var(--color-muted); font-size: 9px; line-height: 1.7; }
+.ipo-calendar__empty { padding-block: 24px 20px; }
+.ipo-calendar__placeholder { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; width: 116px; margin-bottom: 20px; }
+.ipo-calendar__placeholder i { height: 20px; border: 1px solid var(--color-line); border-radius: 5px; background: var(--color-paper); }
+.ipo-calendar__placeholder i:nth-child(6), .ipo-calendar__placeholder i:nth-child(9) { background: color-mix(in srgb, var(--color-blue) 10%, var(--color-workspace-panel)); border-color: var(--color-transparent); }
+.ipo-calendar__empty h4 { font: 500 15px var(--font-display); letter-spacing: -.03em; margin: 0 0 8px; line-height: 1.5; }
+.ipo-calendar__empty p { color: var(--color-muted); font-size: 11px; line-height: 1.8; }
+.ipo-application-snapshot { background: color-mix(in srgb, var(--color-mint) 24%, var(--color-workspace-panel)); }
+.ipo-application-snapshot > header { justify-content: space-between; }
+.ipo-application-snapshot header > svg { color: var(--color-blue); flex-shrink: 0; }
+.ipo-application-snapshot dl { display: grid; gap: 14px; margin: 24px 0 20px; }
+.ipo-application-snapshot dl > div { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 11px; }
+.ipo-application-snapshot dt { display: flex; align-items: center; gap: 8px; text-transform: capitalize; color: var(--color-muted); }
+.ipo-application-snapshot dt i { width: 6px; height: 6px; background: var(--color-blue); border-radius: 50%; }
+.ipo-application-snapshot dt i[data-status="ALLOTTED"] { background: var(--color-ink); }
+.ipo-application-snapshot dt i[data-status="NOT_ALLOTTED"] { background: var(--color-muted); }
+.ipo-application-snapshot dd { margin: 0; font: 500 18px var(--font-display); }
+.ipo-application-snapshot > button { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 40px; padding: 12px 0 0; width: 100%; border: 0; border-top: 1px solid var(--color-line); color: var(--color-ink); background: none; font-size: 10px; }
+.ipo-company { display: flex; align-items: center; gap: 12px; }
+.ipo-company__avatar { display: grid; place-items: center; width: 38px; height: 38px; flex-shrink: 0; color: var(--color-blue); background: color-mix(in srgb, var(--color-blue) 8%, var(--color-workspace-panel)); border-radius: 12px; font: 600 12px var(--font-display); }
+.ipo-company strong { display: block; font-weight: 550; max-width: 24ch; overflow-wrap: anywhere; }
+.ipo-company small { display: block; color: var(--color-muted); font-size: 9px; margin-top: 4px; }
+.ipo-price { font-weight: 600; font-variant-numeric: tabular-nums; }
+.ipo-table-wrap tbody tr:hover, .ipo-row--selected { background: color-mix(in srgb, var(--color-blue) 4%, var(--color-workspace-panel)); }
+.ipo-status::before { content: ''; width: 5px; height: 5px; flex-shrink: 0; border-radius: 50%; background: currentColor; margin-right: 6px; }
+.ipo-status { align-items: center; }
+.ipo-empty { min-height: 200px; }
+.ipo-empty > span { width: 52px; height: 52px; border-radius: 16px; }
+.ipo-view-switch { padding-bottom: 6px; border-bottom: 1px solid var(--color-line); }
+@media (min-width: 46rem) and (max-width: 75.999rem) { .ipo-rail { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 76rem) { .ipo-workspace { grid-template-columns: minmax(0, 1fr) 252px; } .ipo-filters > .ipo-search { flex-basis: 100%; } }
+@media (min-width: 60rem) {
+  .ipo-dialog--drawer { position: fixed; inset: 0 0 0 auto; width: min(600px, 52vw); height: 100dvh; max-height: 100dvh; max-width: none; margin: 0 0 0 auto; border-radius: 24px 0 0 24px; border-right: 0; }
+  .ipo-dialog--drawer::backdrop { background: color-mix(in srgb, var(--color-overlay) 50%, var(--color-transparent)); }
+  .ipo-dialog--drawer .ipo-dialog__inner { padding: 28px; }
+  .ipo-dialog--drawer .ipo-dialog__inner > header { padding-bottom: 18px; border-bottom: 1px solid var(--color-line); }
+}
