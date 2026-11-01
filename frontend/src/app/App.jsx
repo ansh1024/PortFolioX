@@ -6,6 +6,7 @@ import { dashboardSections } from './dashboardSections.js';
 import AuthLayout from '../layouts/AuthLayout.jsx';
 import LoginPage from '../pages/LoginPage.jsx';
 import RegistrationPlaceholder from '../pages/RegistrationPlaceholder.jsx';
+import OverviewPage from '../pages/OverviewPage.jsx';
 
 export default function App() {
   return <BrowserRouter>
@@ -18,7 +19,7 @@ export default function App() {
       <Route path="/dashboard" element={<DashboardLayout />}>
         {dashboardSections.map(section => section.path
           ? <Route key={section.path} path={section.path} element={<SectionPlaceholder section={section} />} />
-          : <Route key="overview" index element={<SectionPlaceholder section={section} />} />)}
+          : <Route key="overview" index element={<OverviewPage />} />)}
         <Route path="*" element={<RouteNotFound />} />
       </Route>
       <Route path="*" element={<RouteNotFound />} />
