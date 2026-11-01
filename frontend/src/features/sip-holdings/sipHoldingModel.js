@@ -1,0 +1,12 @@
+import {validDate} from '../ipo/ipoModel.js';
+export {money,number,dateLabel} from '../ipo/ipoModel.js';
+export const frequencies=['MONTHLY','QUARTERLY','HALF_YEARLY','YEARLY','LUMPSUM'];
+export const frequencyLabel=value=>({MONTHLY:'Monthly',QUARTERLY:'Quarterly',HALF_YEARLY:'Half-yearly',YEARLY:'Yearly',LUMPSUM:'Lump sum'}[value]||'Not recorded');
+export const keys=['mutualFundId','units','investedAmount','startDate','sipAmount','frequency'];
+export const initial=(record={})=>Object.fromEntries(keys.map(k=>[k,record[k]??'']));
+const validNumber=v=>v!==null&&v!==undefined&&String(v).trim()!==''&&Number.isFinite(Number(v))&&Number(v)>=0;
+export function validate(v,holdings=[],id){const errors={};if(!v.mutualFundId)errors.mutualFundId='Choose a mutual fund.';else if(holdings.some(h=>h.mutualFundId===v.mutualFundId&&h.holdingId!==id))errors.mutualFundId='You already have a holding for this fund.';if(!frequencies.includes(v.frequency))errors.frequency='Choose a supported frequency.';if(!validDate(v.startDate))errors.startDate='Enter a valid start date.';if(!/^\d+$/.test(String(v.sipAmount))||Number(v.sipAmount)<1||Number(v.sipAmount)>2147483647)errors.sipAmount='Enter a whole amount from 1 to 2,147,483,647.';for(const key of ['units','investedAmount'])if(v[key]!==''&&!validNumber(v[key]))errors[key]='Enter a finite nonnegative number, or leave blank.';return errors;}
+export const payload=v=>Object.fromEntries(keys.map(k=>[k,k==='sipAmount'?Number(v[k]):['units','investedAmount'].includes(k)&&v[k]===''?null:v[k]]));
+export function total(records,key){if(!records)return null;if(records.some(r=>!validNumber(r[key])))return null;const sum=records.reduce((s,r)=>s+Number(r[key]),0);return Number.isFinite(sum)?sum:null;}
+export function summary(holdings){return {count:holdings?.length??null,invested:total(holdings,'investedAmount'),monthly:total(holdings?.filter(h=>h.frequency==='MONTHLY'),'sipAmount')};}
+export function selectHoldings(holdings,{query='',frequency='',sort='startDate',direction='desc'}={}){return holdings.filter(h=>(h.mutualFundName||'').toLowerCase().includes(query.trim().toLowerCase())&&(!frequency||h.frequency===frequency)).sort((a,b)=>{if(a[sort]==null||a[sort]==='')return b[sort]==null?0:1;if(b[sort]==null||b[sort]==='')return -1;return (['sipAmount','investedAmount'].includes(sort)?Number(a[sort])-Number(b[sort]):String(a[sort]).localeCompare(String(b[sort])))*(direction==='asc'?1:-1);});}
