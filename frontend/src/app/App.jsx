@@ -10,6 +10,8 @@ import OverviewPage from '../pages/OverviewPage.jsx';
 import IpoTrackerPage from '../pages/IpoTrackerPage.jsx';
 import MutualFundsPage from '../pages/MutualFundsPage.jsx';
 import SipHoldingsPage from '../pages/SipHoldingsPage.jsx';
+import RiskAssessmentPage from '../pages/RiskAssessmentPage.jsx';
+import IpoScoringPage from '../pages/IpoScoringPage.jsx';
 
 export default function App() {
   return <BrowserRouter>
@@ -21,7 +23,7 @@ export default function App() {
       </Route>
       <Route path="/dashboard" element={<DashboardLayout />}>
         {dashboardSections.map(section => section.path
-          ? <Route key={section.path} path={section.path} element={section.path === 'ipo-tracker' ? <IpoTrackerPage /> : section.path === 'mutual-funds' ? <MutualFundsPage /> : section.path === 'sip-holdings' ? <SipHoldingsPage /> : <SectionPlaceholder section={section} />} />
+          ? <Route key={section.path} path={section.path} element={section.path === 'ipo-tracker' ? <IpoTrackerPage /> : section.path === 'mutual-funds' ? <MutualFundsPage /> : section.path === 'sip-holdings' ? <SipHoldingsPage /> : section.path === 'risk-assessment' ? <RiskAssessmentPage /> : section.path === 'ipo-scoring' ? <IpoScoringPage /> : <SectionPlaceholder section={section} />} />
           : <Route key="overview" index element={<OverviewPage />} />)}
         <Route path="*" element={<RouteNotFound />} />
       </Route>

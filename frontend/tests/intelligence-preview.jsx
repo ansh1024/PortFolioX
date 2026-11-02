@@ -27,7 +27,7 @@ function App() {
         }
         return mode === 'Empty' ? [] : [{ riskProfileId: 'TEST-102', riskScore: 87.5, riskCategory: 'MODERATE', calculatedAt: '2026-11-02T12:00:00' }, { riskProfileId: 'TEST-101', riskScore: 12.5, riskCategory: 'LOW', calculatedAt: '2026-11-01T12:00:00' }];
       }
-      if (path === '/ipos') return mode === 'Empty' ? [] : [{ ipoId: 1, companyName: 'Test Horizon Industries' }, { ipoId: 2, companyName: 'Test Cedar Labs' }];
+      if (path === '/ipos') return mode === 'Empty' ? [] : [{ ipoId: 1, companyName: 'Test Horizon Industries', sector: 'Industrials', price: 240, gmp: 24, ipoStatus: 'OPEN', openingDate: '2026-11-01', closingDate: '2026-11-05' }, { ipoId: 2, companyName: 'Test Cedar Labs', sector: 'Technology', price: 120, gmp: 12, ipoStatus: 'UPCOMING', openingDate: '2026-11-10', closingDate: '2026-11-13' }];
       if (method === 'POST') {
         if (mode === 'Missing metrics') throw new ApiError('Test IPO metrics unavailable', 500);
         if (mode === 'Malformed result') return { totalScore: null };
