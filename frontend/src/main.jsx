@@ -6,6 +6,7 @@ import './styles/tokens.css';
 import './styles/globals.css';
 import AuthProvider from './context/AuthProvider.jsx';
 import App from './app/App.jsx';
+import './styles/polish.css';
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode><AuthProvider><App /></AuthProvider></React.StrictMode>,

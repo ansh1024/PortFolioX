@@ -62,7 +62,7 @@ export function deriveOverview(resources = {}) {
   const fundIds = holdings?.map(item => item.mutualFundId);
   const fundCount = fundIds && fundIds.every(id => typeof id === 'string' && id.length)
     ? new Set(fundIds).size : null;
-  const contributions = holdings ? Object.entries(Object.groupBy(holdings, item => item.frequency || 'UNSPECIFIED'))
+  const contributions = holdings ? Object.entries(holdings.reduce((groups,item) => { const key=item.frequency || 'UNSPECIFIED'; (groups[key] ||= []).push(item); return groups; }, Object.create(null)))
     .map(([frequency, items]) => {
       const amounts = items.map(item => amount(item.sipAmount));
       return { frequency, amount: amounts.every(value => value !== null) ? amounts.reduce((sum, value) => sum + value, 0) : null };

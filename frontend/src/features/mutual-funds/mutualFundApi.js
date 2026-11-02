@@ -6,7 +6,7 @@ export function createMutualFundApi(options={}) {
 }
 export async function loadFunds(api,signal) {
  if(!api)return {status:'blocked',funds:null};
- try {const funds=await api.list(signal);if(!Array.isArray(funds))throw new ApiError('Unexpected fund response.');return {status:'ready',funds};}
+ try {const funds=await api.list(signal);if(!Array.isArray(funds) || !funds.every(f => f && typeof f === 'object' && typeof f.fundId === 'string' && !!f.fundId && (f.fundName == null || typeof f.fundName === 'string')))throw new ApiError('Unexpected fund response.');return {status:'ready',funds};}
  catch(error){if(error.name==='AbortError')throw error;return {status:[401,403].includes(error.status)?'blocked':'error',funds:null,error:error.message||'Could not load funds.'};}
 }
 
@@ -25,7 +25,7 @@ export async function loadFundWorkspace(api, sipApi, signal) {
     return { status: 'blocked', funds: null, sips: null, sipStatus: 'unconnected' };
   }
   const state = catalogue.status === 'fulfilled' ? catalogue.value : { status: 'error', funds: null, error: 'Could not load the catalogue.' };
-  const sips = holdings.status === 'fulfilled' && Array.isArray(holdings.value) ? holdings.value : null;
+  const sips = holdings.status === 'fulfilled' && Array.isArray(holdings.value) && holdings.value.every(h => h && typeof h.holdingId === 'string' && typeof h.mutualFundId === 'string') ? holdings.value : null;
   return { ...state, sips, sipStatus: !sipApi ? 'unconnected' : sips ? 'ready' : 'error',
     fetchedAt: state.status === 'ready' ? new Date().toISOString() : null };
 }

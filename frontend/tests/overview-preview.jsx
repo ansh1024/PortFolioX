@@ -28,3 +28,5 @@ function StateHarness() {
   </div></div></MemoryRouter>;
 }
 createRoot(document.getElementById('root')).render(<StateHarness />);
+
+import '../src/styles/polish.css';

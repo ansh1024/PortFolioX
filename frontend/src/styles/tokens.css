@@ -34,6 +34,14 @@
   --color-theme-knob: oklch(100% 0 0);
   --color-theme-crater: oklch(80% 0.02 260);
   --color-theme-sun: var(--color-lime);
+  --color-error: oklch(48% 0.18 25);
+  --color-error-surface: oklch(96% 0.02 25);
+  --color-character-coral: oklch(75% 0.17 49);
+  --color-cast-violet: #6312f6;
+  --color-cast-coral: #f27b37;
+  --color-cast-yellow: #e1d312;
+  --color-cast-ink: #1b1c21;
+  --color-cast-eye: #f2f2f2;
   --font-display: 'Manrope Variable', sans-serif;
   --font-body: 'DM Sans Variable', sans-serif;
   --space-3xs: 4px;
@@ -58,8 +66,8 @@
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
-/* Dashboard-scoped overrides never change the landing-page palette. */
-.dash-shell[data-theme="dark"] {
+/* Application themes never change the landing-page palette. */
+.dash-shell[data-theme="dark"], .auth-shell[data-theme="dark"] {
   --color-paper: oklch(23% 0.012 260);
   --color-ink: oklch(95% 0.006 260);
   --color-muted: oklch(74% 0.015 260);
@@ -72,4 +80,9 @@
   --color-mint: oklch(33% 0.04 165);
   --color-pink: oklch(33% 0.04 320);
   --color-theme-track: oklch(36% 0.07 275);
+  --color-error: oklch(80% 0.12 25);
+  --color-error-surface: oklch(28% 0.045 25);
 }
+
+/* Shared UI scale; existing brand palette and theme overrides remain authoritative. */
+:root{--ui-text:13px;--ui-control:12px;--ui-caption:11px;--ui-control-height:44px;--ui-panel-radius:16px;--ui-control-radius:9px;--ui-focus-width:2px;}

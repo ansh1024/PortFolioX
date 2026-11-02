@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import LayoutIcon from './LayoutIcon.jsx';
 import ThemeToggle from './ThemeToggle.jsx';
 
@@ -9,10 +10,10 @@ export default function Topbar({ title, onMenuOpen, menuOpen, theme, onThemeTogg
     </div>
     <div className="dash-topbar__actions">
       <ThemeToggle theme={theme} onToggle={onThemeToggle} />
-      <div className="dash-profile" aria-label="Profile placeholder">
+      <Link to="/dashboard/profile" className="dash-profile" aria-label="Open your profile">
       <span className="dash-profile__avatar"><LayoutIcon name="profile" size={19} /></span>
-      <span className="dash-profile__label">Profile<span>Coming soon</span></span>
-      </div>
+      <span className="dash-profile__label">Profile<span>Account workspace</span></span>
+      </Link>
     </div>
   </header>;
 }

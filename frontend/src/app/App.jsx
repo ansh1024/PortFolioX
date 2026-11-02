@@ -11,6 +11,8 @@ import IpoTrackerPage from '../pages/IpoTrackerPage.jsx';
 import MutualFundsPage from '../pages/MutualFundsPage.jsx';
 import SipHoldingsPage from '../pages/SipHoldingsPage.jsx';
 import RiskAssessmentPage from '../pages/RiskAssessmentPage.jsx';
+import ProfilePage from '../pages/ProfilePage.jsx';
+import DecisionJournalPage from '../pages/DecisionJournalPage.jsx';
 import IpoScoringPage from '../pages/IpoScoringPage.jsx';
 
 export default function App() {
@@ -23,7 +25,7 @@ export default function App() {
       </Route>
       <Route path="/dashboard" element={<DashboardLayout />}>
         {dashboardSections.map(section => section.path
-          ? <Route key={section.path} path={section.path} element={section.path === 'ipo-tracker' ? <IpoTrackerPage /> : section.path === 'mutual-funds' ? <MutualFundsPage /> : section.path === 'sip-holdings' ? <SipHoldingsPage /> : section.path === 'risk-assessment' ? <RiskAssessmentPage /> : section.path === 'ipo-scoring' ? <IpoScoringPage /> : <SectionPlaceholder section={section} />} />
+          ? <Route key={section.path} path={section.path} element={section.path === 'ipo-tracker' ? <IpoTrackerPage /> : section.path === 'mutual-funds' ? <MutualFundsPage /> : section.path === 'sip-holdings' ? <SipHoldingsPage /> : section.path === 'risk-assessment' ? <RiskAssessmentPage /> : section.path === 'ipo-scoring' ? <IpoScoringPage /> : section.path === 'decision-journal' ? <DecisionJournalPage /> : section.path === 'profile' ? <ProfilePage /> : <SectionPlaceholder section={section} />} />
           : <Route key="overview" index element={<OverviewPage />} />)}
         <Route path="*" element={<RouteNotFound />} />
       </Route>
